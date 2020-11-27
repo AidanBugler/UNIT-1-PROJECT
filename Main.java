@@ -8,9 +8,11 @@ class Main {
     int menuChoice;
     int [] multiplicationColl = {1,2,3,4,5,6,7,8,9,10,11,12};
     int [] multiplicationRow = {1,2,3,4,5,6,7,8,9,10,11,12};
-    int [] addingColl = {10,20,30,40,50,60,70,80,90,100};
-    int [] addingRow = {1,2,3,4,5,6,7,8,9,10};
-    
+    int MultiplicationOutput;
+    String Red = "\033[0;31m";
+    String White = "\033[0;37m";
+    boolean True = true;
+    boolean False = false;
     //This is the menun system that lets the user pick what they want to see
     do {
       System.out.println("What would you like to know?");
@@ -23,20 +25,25 @@ class Main {
        {
           if (menuChoice == 1) 
          {
-          System.out.println("This is the Multiplication table");
+          System.out.println("This is the Multiplication table:");
           for(int i=0;i<12;i+=1)
           { 
-          
             for (int j=0;j<12;j+=1)
             {
-              System.out.print(multiplicationRow[j]*multiplicationColl[i]+"  ");
+              MultiplicationOutput = multiplicationRow[j]*multiplicationColl[i];
+                //First checks if a number is a perfect square then if true changes the colour of the perfect square to red then back to white
+                if (MultiplicationOutput == Math.sqrt(MultiplicationOutput*MultiplicationOutput))
+                {
+                 
+                }
+              System.out.printf( "%4d" , MultiplicationOutput );
             }
             System.out.println();
           }
          }
           if (menuChoice == 2) 
          {
-          System.out.println("This is the Addition table");
+          System.out.println("This is the Addition table:");
           for(int j=0;j<10;j+=1)
           { 
             for (int i=0;i<=100;i+=10)
@@ -48,21 +55,21 @@ class Main {
          }
           if (menuChoice == 3) 
          {
-          System.out.println("This is the AND logic gate table");
+          System.out.println("This is the AND logic gate table:");
           System.out.println("Condition 1 | Condition 2 | AND ");
-          System.out.println("   True     |    True     | True ");
-          System.out.println("   True     |    False    | False ");
-          System.out.println("   False    |    True     | False ");
-          System.out.println("   False    |    False    | False ");
+          System.out.println("   "+True+"     |    "+True+"     | "+True+" ");
+          System.out.println("   "+True+"     |    "+False+"    | "+False+" ");
+          System.out.println("   "+False+"    |    "+True+"     | "+False+" ");
+          System.out.println("   "+False+"    |    "+False+"    | "+False+" ");
          }
           if (menuChoice == 4) 
          {
-          System.out.println("This is OR logic gate table");
+          System.out.println("This is OR logic gate table:");
           System.out.println("Condition 1 | Condition 2 | OR ");
-          System.out.println("   True     |    True     | True ");
-          System.out.println("   True     |    False    | True ");
-          System.out.println("   False    |    True     | True ");
-          System.out.println("   False    |    False    | False ");
+          System.out.println("   "+True+"     |    "+True+"     | "+True+" ");
+          System.out.println("   "+True+"     |    "+False+"    | "+True+" ");
+          System.out.println("   "+False+"    |    "+True+"     | "+True+" ");
+          System.out.println("   "+False+"    |    "+False+"    | "+False+" ");
          }
        }
       if (menuChoice == 5) 
