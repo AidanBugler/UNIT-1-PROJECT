@@ -8,9 +8,7 @@ class Main {
     int menuChoice;
     int [] multiplicationColl = {1,2,3,4,5,6,7,8,9,10,11,12};
     int [] multiplicationRow = {1,2,3,4,5,6,7,8,9,10,11,12};
-    int [] addingColl = {10,20,30,40,50,60,70,80,90,100};
-    int [] addingRow = {1,2,3,4,5,6,7,8,9,10};
-    
+    boolean[]boolAnd = new boolean[4]; 
     //This is the menun system that lets the user pick what they want to see
     do {
       System.out.println("What would you like to know?");
@@ -49,12 +47,15 @@ class Main {
           if (menuChoice == 3) 
          {
           System.out.println("This is the AND logic gate table");
-          System.out.println("Condition 1 | Condition 2 | AND ");
-          System.out.println("   True     |    True     | True ");
-          System.out.println("   True     |    False    | False ");
-          System.out.println("   False    |    True     | False ");
-          System.out.println("   False    |    False    | False ");
+          for (int i=0; i< boolAnd.length;i++)
+          {
+            for (int j=0; j<boolAnd.length; j++){
+            System.out.print(boolAnd[i]+" ");
+            }
+            System.out.println();
+          }
          }
+
           if (menuChoice == 4) 
          {
           System.out.println("This is OR logic gate table");
