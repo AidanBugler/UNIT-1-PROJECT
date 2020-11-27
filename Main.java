@@ -11,8 +11,9 @@ class Main {
     int MultiplicationOutput;
     String Red = "\033[0;31m";
     String White = "\033[0;37m";
-    boolean True = true;
-    boolean False = false;
+    boolean conditionTrue = true;
+    boolean conditionFalse = false;
+  
     //This is the menun system that lets the user pick what they want to see
     do {
       System.out.println("What would you like to know?");
@@ -23,6 +24,7 @@ class Main {
      //This checks if the user wants to see something or if they want to exit the program, if they do want to see something then it checks again what option they want to see
       if (menuChoice == 1 || menuChoice == 2 || menuChoice == 3 || menuChoice == 4)
        {
+         //If the user inputs 1 then the code goes here and then returns to the menu when finished
           if (menuChoice == 1) 
          {
           System.out.println("This is the Multiplication table:");
@@ -41,6 +43,7 @@ class Main {
             System.out.println();
           }
          }
+         //If the user inputs 2 then the code goes here and then returns to the menu when finished
           if (menuChoice == 2) 
          {
           System.out.println("This is the Addition table:");
@@ -53,25 +56,31 @@ class Main {
             System.out.println();
           }
          }
+          //If loop for And logic table and OR logic table results
+            boolean conditionAnd = (conditionTrue && conditionFalse);
+            boolean conditionOr = (conditionTrue || conditionFalse);
+          //If the user inputs 3 then the code goes here and then returns to the menu when finished
           if (menuChoice == 3) 
          {
           System.out.println("This is the AND logic gate table:");
           System.out.println("Condition 1 | Condition 2 | AND ");
-          System.out.println("   "+True+"     |    "+True+"     | "+True+" ");
-          System.out.println("   "+True+"     |    "+False+"    | "+False+" ");
-          System.out.println("   "+False+"    |    "+True+"     | "+False+" ");
-          System.out.println("   "+False+"    |    "+False+"    | "+False+" ");
+          System.out.println("   "+conditionTrue+"     |    "+conditionTrue+"     | "+conditionAnd+" ");
+          System.out.println("   "+conditionTrue+"     |    "+conditionFalse+"    | "+conditionAnd+" ");
+          System.out.println("   "+conditionFalse+"    |    "+conditionTrue+"     | "+conditionAnd+" ");
+          System.out.println("   "+conditionFalse+"    |    "+conditionFalse+"    | "+conditionAnd+" ");
          }
+          //If the user inputs 4 then the code goes here and then returns to the menu when finished
           if (menuChoice == 4) 
          {
           System.out.println("This is OR logic gate table:");
           System.out.println("Condition 1 | Condition 2 | OR ");
-          System.out.println("   "+True+"     |    "+True+"     | "+True+" ");
-          System.out.println("   "+True+"     |    "+False+"    | "+True+" ");
-          System.out.println("   "+False+"    |    "+True+"     | "+True+" ");
-          System.out.println("   "+False+"    |    "+False+"    | "+False+" ");
+          System.out.println("   "+conditionTrue+"     |    "+conditionTrue+"     | "+conditionOr+" ");
+          System.out.println("   "+conditionTrue+"     |    "+conditionFalse+"    | "+conditionOr+" ");
+          System.out.println("   "+conditionFalse+"    |    "+conditionTrue+"     | "+conditionOr+" ");
+          System.out.println("   "+conditionFalse+"    |    "+conditionFalse+"    | "+conditionOr+" ");
          }
        }
+      //When the user chooses #5 it will go down here and print the exit message then because we have the do-while loop going it will exit the loop and end the program
       if (menuChoice == 5) 
       {
         System.out.print("Have a good day!");
